@@ -11,13 +11,11 @@
             // computerPlay will selection either rock, paper, or scissors
             function computerPlay() {
 
-                // Array holding rock, paper, and scissors
                 let choice = ['rock', 'paper', 'scissors'];
 
                 // Randomize the choice
                 let randomChoice = Math.floor(Math.random() * choice.length);
 
-                // Return rock, paper, or scissors
                 return choice[randomChoice];
             }
 
@@ -76,7 +74,7 @@
                     }
                 }
 
-                // determines whether you win or lose
+                // determines whether you won or lost
                 if (playerScore > computerScore) {
                     console.log(`You Win! Computer Score: ${computerScore} Your Score: ${playerScore}`);
                 } else {
