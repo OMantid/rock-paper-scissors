@@ -6,6 +6,14 @@
     </head>
 
     <body>
+
+        <button type='button'>Paper</button>
+        <button type='button'>Rock</button>
+        <button type='button'>Scissors</button>
+
+        <div>
+            <h1>Results:</h1>
+        </div>
         <script>
             
             // computerPlay will selection either rock, paper, or scissors
@@ -30,9 +38,9 @@
                 // switch statement compares between choices and determines the winner
                 switch (true) {
                     case (computerSelection == 'rock' && playerSelection == 'scissors'):
-                    
+
                         outcome = `You Lose! ${computerSelection} beats ${playerSelection}`;
-                    
+
                     break;
 
                     case (computerSelection == 'paper' && playerSelection == 'rock'):
@@ -44,7 +52,13 @@
                     case (computerSelection == 'scissors' && playerSelection == 'paper'):
 
                         outcome = `You Lose! ${computerSelection} beats ${playerSelection}`;
-                    
+
+                    break;
+
+                    case (computerSelection == playerSelection):
+
+                        outcome = `Draw!`;
+
                     break;
                     default: 
                         outcome = `You Win! ${playerSelection} beats ${computerSelection}`;
@@ -59,7 +73,7 @@
                 let computerScore = 0;
 
                 // iterates 5 matches determing score and result
-                for (let i = 0; i < 5; i++){
+                /* for (let i = 0; i < 5; i++){
                     let playerSelection = prompt('Rock Paper or Scissors?');
                     let computerSelection = computerPlay();
                     let result = singleRound(playerSelection, computerSelection);
@@ -72,7 +86,7 @@
                     } else {
                         computerScore++;
                     }
-                }
+                } */
 
                 // determines whether you won or lost
                 if (playerScore > computerScore) {
@@ -83,7 +97,18 @@
 
             }
 
-            game();
+            const div = document.querySelector('div');
+            const para = document.createElement('p');
+            const btn = document.querySelectorAll('button');
+            const temp = computerPlay();
+
+            btn.forEach( btn => btn.addEventListener('click', function(){
+                const result = singleRound(this.textContent, temp);
+                para.textContent = result;
+                div.appendChild(para);
+            }));
+
+            //game();
         </script>
     </body>
 </html>
