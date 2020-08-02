@@ -1,3 +1,3 @@
-# Project: Rock Paper Scissors
+# Project: Rock Paper Scissors Improved
 
-This project aims at creating a simplified version of rock paper scissors. This implementation will temporarily work through the console. 
+This project aims at improving the original rock, paper, scissors program to include a simple UI.
